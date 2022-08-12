@@ -1,0 +1,13 @@
+.foodContainer {
+  width: 100%;
+  height: 250px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+@media (min-width: 600px) {
+  .foodContainer {
+    width: 500px;
+    height: 450px;
+  }
+}
