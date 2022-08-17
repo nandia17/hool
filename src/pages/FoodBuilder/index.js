@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import BuildControls from "../../components/buildControls";
 import Food from "../../components/Food";
+import Order from "../../components/order";
+
 const food_price = {
   tsuiwan: 12000,
   salad: 10000,
@@ -14,6 +16,7 @@ class FoodBuilder extends Component {
   //     super(props);
   // }
   state = {
+
     foods: {
       tsuiwan: 0,
       salad: 0,
@@ -30,7 +33,7 @@ class FoodBuilder extends Component {
     newFood[type]++;
     this.setState({ foods: newFood });
     const newPrice = this.state.totalPrice + food_price[type];
-    this.setState({totalPrice: newPrice});
+    this.setState({ totalPrice: newPrice });
   };
   hoolHasah = (type) => {
     if (this.state.foods[type] !== 0) {
@@ -48,8 +51,15 @@ class FoodBuilder extends Component {
     for (let key in disabledBtn) {
       disabledBtn[key] = disabledBtn[key] <= 0;
     }
+    // hoool = (type) => 
     return (
       <div>
+        <Order
+          foods={this.state.foods}
+          price={food_price}
+          FoodBuilder={this.state.totalPrice} 
+        />
+
         <Food foods={this.state.foods} />
         <div>
           <BuildControls
