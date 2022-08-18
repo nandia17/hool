@@ -23,7 +23,7 @@ hoolnuud.push(
   return (
     <div>
       <h2>Modal</h2>
-      <p> {hoolnuud} </p>
+      <p> {hoolnuud} hhhh</p>
      
     </div>
   );
